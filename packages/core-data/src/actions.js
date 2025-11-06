@@ -327,7 +327,7 @@ export const deleteEntityRecord =
 					'/templates';
 			}
 			try {
-				let path = `${ baseURL }/${ recordId }`;
+				let path = `${ entityConfig.baseURL }/${ recordId }`;
 
 				if ( query ) {
 					path = addQueryArgs( path, query );
@@ -582,7 +582,9 @@ export const saveEntityRecord =
 					'/templates';
 			}
 			try {
-				const path = `${ baseURL }${ recordId ? '/' + recordId : '' }`;
+				const path = `${ entityConfig.baseURL }${
+					recordId ? '/' + recordId : ''
+				}`;
 				// Skip the raw values check when creating a new record; they don't exist yet.
 				const persistedRecord = ! isNewRecord
 					? select.getRawEntityRecord( kind, name, recordId )

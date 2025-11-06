@@ -239,24 +239,6 @@ export const getEntityRecord =
 		}
 	};
 
-// Whenever a template is saved, the active templates might be updated, so
-// invalidate the site settings when a template is updated or deleted.
-getEntityRecord.shouldInvalidate = ( action, kind, name ) => {
-	return (
-		kind === 'root' &&
-		name === 'site' &&
-		( ( action.type === 'RECEIVE_ITEMS' &&
-			// Making sure persistedEdits is set seems to be the only way of
-			// knowing whether it's an update or fetch. Only an update would
-			// have persistedEdits.
-			action.persistedEdits &&
-			action.persistedEdits.status !== 'auto-draft' ) ||
-			action.type === 'REMOVE_ITEMS' ) &&
-		action.kind === 'postType' &&
-		action.name === 'wp_template'
-	);
-};
-
 /**
  * Requests an entity's record from the REST API.
  */
@@ -332,26 +314,7 @@ export const getEntityRecords =
 				};
 			}
 
-			let { baseURL } = entityConfig;
-			// `combinedTemplates` means that we fetch templates from the "old"
-			// /templates endpoint, which combines active user templates with
-			// the registered templates and rewrites IDs in the form of
-			// `theme-slug/template-slug`. When turned off, we only fetch
-			// database templates (posts). To fetch registered templates without
-			// edits applied, use the `registeredTemplate` entity.
-			const { combinedTemplates = true } = query;
-
-			if (
-				kind === 'postType' &&
-				name === 'wp_template' &&
-				combinedTemplates
-			) {
-				baseURL =
-					baseURL.slice( 0, baseURL.lastIndexOf( '/' ) ) +
-					'/templates';
-			}
-
-			const path = addQueryArgs( baseURL, {
+			const path = addQueryArgs( entityConfig.baseURL, {
 				...entityConfig.baseURLParams,
 				...query,
 			} );
@@ -911,30 +874,21 @@ export const getDefaultTemplateId =
 			? template?.wp_id || template?.id
 			: template?.id;
 		// Endpoint may return an empty object if no template is found.
-		if ( id ) {
-			template.id = id;
+		if ( template?.id ) {
 			registry.batch( () => {
-				dispatch.receiveDefaultTemplateId( query, id );
-				dispatch.receiveEntityRecords( 'postType', template.type, [
+				dispatch.receiveDefaultTemplateId( query, template.id );
+				dispatch.receiveEntityRecords( 'postType', 'wp_template', [
 					template,
 				] );
 				// Avoid further network requests.
 				dispatch.finishResolution( 'getEntityRecord', [
 					'postType',
-					template.type,
-					id,
+					'wp_template',
+					template.id,
 				] );
 			} );
 		}
 	};
-
-getDefaultTemplateId.shouldInvalidate = ( action ) => {
-	return (
-		action.type === 'RECEIVE_ITEMS' &&
-		action.kind === 'root' &&
-		action.name === 'site'
-	);
-};
 
 /**
  * Requests an entity's revisions from the REST API.

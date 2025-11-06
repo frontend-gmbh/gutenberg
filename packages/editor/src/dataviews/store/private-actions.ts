@@ -185,7 +185,13 @@ export const registerPostTypeSchema =
 				? viewPostRevisions
 				: undefined,
 			// @ts-ignore
-			canDuplicate,
+			globalThis.IS_GUTENBERG_PLUGIN
+				? ! [ 'wp_template', 'wp_block', 'wp_template_part' ].includes(
+						postTypeConfig.slug
+				  ) &&
+				  canCreate &&
+				  duplicatePost
+				: undefined,
 			postTypeConfig.slug === 'wp_template_part' &&
 			canCreate &&
 			currentTheme?.is_block_theme
