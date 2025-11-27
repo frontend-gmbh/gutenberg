@@ -25,6 +25,10 @@
 - DataViews: `filterSortAndPaginate()` will ignore sorting on non-sortable fields [#73950](https://github.com/WordPress/gutenberg/pull/73950)
 - DataViews: Fix locked fields order when toggling visibility in properties section. [#74326](https://github.com/WordPress/gutenberg/pull/74326)
 
+### Breaking changes
+
+- Field API: `getElements` signature changed to support pagination and filtering. [#73623](https://github.com/WordPress/gutenberg/pull/73623)
+
 ### Enhancements
 
 - DataViewsPicker: Ensure checkbox column in table picker layout is always `48px` wide. [#74181](https://github.com/WordPress/gutenberg/pull/74181)
