@@ -43,10 +43,11 @@
 	"types": "build-types",
 	"sideEffects": false,
 	"dependencies": {
+		"@wordpress/api-fetch": "7.37.0",
 		"@wordpress/hooks": "file:../hooks",
 		"@wordpress/undo-manager": "file:../undo-manager",
 		"@wordpress/url": "file:../url",
-		"lib0": "^0.2.42",
+		"lib0": "0.2.85",
 		"y-protocols": "^1.0.5",
 		"yjs": "~13.6.6"
 	},

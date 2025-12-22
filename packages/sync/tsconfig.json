@@ -5,6 +5,7 @@
 		"types": [ "node" ]
 	},
 	"references": [
+		{ "path": "../api-fetch" },
 		{ "path": "../hooks" },
 		{ "path": "../undo-manager" },
 		{ "path": "../url" }

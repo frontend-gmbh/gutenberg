@@ -13,20 +13,6 @@ import type * as Y from 'yjs';
  */
 import type { WORDPRESS_META_KEY_FOR_CRDT_DOC_PERSISTENCE } from './config';
 
-/* globalThis */
-declare global {
-	interface Window {
-		__experimentalCollaborativeEditingSecret?: string;
-		wp?: {
-			ajax?: {
-				settings?: {
-					url?: string;
-				};
-			};
-		};
-	}
-}
-
 export type CRDTDoc = Y.Doc;
 export type EntityID = string;
 export type ObjectID = string;
