@@ -100,9 +100,9 @@ class Gutenberg_HTTP_Polling_Sync_Server {
 	 * Check if the current user has permission to access a room.
 	 *
 	 * @param WP_REST_Request $request The REST request.
-	 * @return bool True if user has permission
+	 * @return bool|WP_Error True if user has permission, otherwise WP_Error with details.
 	 */
-	public function check_permissions( WP_REST_Request $request ): bool|WP_Error {
+	public function check_permissions( WP_REST_Request $request ) {
 		$room = $request->get_param( 'room' );
 
 		// Parse sync object type (format: kind/name)
@@ -127,7 +127,12 @@ class Gutenberg_HTTP_Polling_Sync_Server {
 		}
 
 		// Implement other entity kinds as needed.
-		return false;
+
+		return new WP_Error(
+			'unexpected_entity_kind',
+			'Unexpected entity kind in room identifier.',
+			array( 'status' => 400 )
+		);
 	}
 
 	/**
@@ -136,7 +141,7 @@ class Gutenberg_HTTP_Polling_Sync_Server {
 	 * @param WP_REST_Request $request The REST request.
 	 * @return WP_REST_Response|WP_Error Response object or error.
 	 */
-	public function handle_add_request( WP_REST_Request $request ): WP_REST_Response|WP_Error {
+	public function handle_add_request( WP_REST_Request $request ) {
 		$message = array(
 			'client_id' => $request->get_param( 'client_id' ),
 			'data'      => $request->get_param( 'data' ),
@@ -161,7 +166,7 @@ class Gutenberg_HTTP_Polling_Sync_Server {
 	 * @param WP_REST_Request $request The REST request.
 	 * @return WP_REST_Response|WP_Error Response object or error.
 	 */
-	public function handle_poll_request( WP_REST_Request $request ): WP_REST_Response|WP_Error {
+	public function handle_poll_request( WP_REST_Request $request ) {
 		$after     = $request->get_param( 'after' );
 		$client_id = $request->get_param( 'client_id' );
 		$room      = $request->get_param( 'room' );
@@ -286,7 +291,7 @@ class Gutenberg_HTTP_Polling_Sync_Server {
 	 * @param string $message_type Message type.
 	 * @return int|null Next message ID.
 	 */
-	private function get_next_message_id( string $room, string $message_type ): int|null {
+	private function get_next_message_id( string $room, string $message_type ) {
 		if ( 'heartbeat' === $message_type ) {
 			// Heartbeat messages don't get an ID.
 			return null;
