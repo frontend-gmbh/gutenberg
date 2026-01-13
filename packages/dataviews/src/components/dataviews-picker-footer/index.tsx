@@ -134,10 +134,16 @@ export function DataViewsPickerFooter() {
 		onChangeSelection,
 		getItemId,
 		actions = EMPTY_ARRAY,
+		view,
+		paginationInfo,
 	} = useContext( DataViewsContext );
-
 	const selectionCount = selection.length;
 	const isMultiselect = useIsMultiselectPicker( actions );
+	const isInfiniteScroll = view.infiniteScrollEnabled;
+
+	const unselectedItemCount = isInfiniteScroll
+		? paginationInfo.totalItems
+		: data.length;
 
 	const message =
 		selectionCount > 0
@@ -152,8 +158,8 @@ export function DataViewsPickerFooter() {
 			  )
 			: sprintf(
 					/* translators: %d: number of items. */
-					_n( '%d Item', '%d Items', data.length ),
-					data.length
+					_n( '%d Item', '%d Items', unselectedItemCount ),
+					unselectedItemCount
 			  );
 
 	const selectedItems = useMemo(
