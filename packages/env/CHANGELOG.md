@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Internal
+
+-   Refactored internal architecture to support multiple runtimes (Docker and Playground). Docker-specific code has been moved to `runtime/docker/` for better encapsulation.
+
 ## 10.36.0 (2025-11-26)
 
 ## 10.35.0 (2025-11-12)
