@@ -731,9 +731,13 @@ export const isBlockHiddenAnywhere = ( state, clientId ) => {
 		return false;
 	}
 
+	if ( typeof blockVisibility !== 'object' ) {
+		return false;
+	}
+
 	// Check if the block is hidden at any viewport.
 	return Object.values( BLOCK_VISIBILITY_VIEWPORTS ).some(
-		( viewport ) => blockVisibility?.[ viewport.value ] === false
+		( viewport ) => blockVisibility?.[ viewport.key ] === false
 	);
 };
 
