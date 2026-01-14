@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-### Internal
+### New Features
 
--   Refactored internal architecture to support multiple runtimes (Docker and Playground). Docker-specific code has been moved to `runtime/docker/` for better encapsulation.
+-   Add experimental WordPress Playground runtime support. Use `--runtime=playground` flag to start wp-env with Playground instead of Docker.
 
 ## 10.36.0 (2025-11-26)
 
