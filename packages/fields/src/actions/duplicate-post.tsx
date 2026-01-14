@@ -62,10 +62,12 @@ const duplicatePost: Action< BasePost > = {
 				return;
 			}
 
+			const isTemplate = item.type === 'wp_template';
+
 			const newItemObject = {
-				status: 'draft',
+				status: isTemplate ? 'publish' : 'draft',
 				title: item.title,
-				slug: item.title || __( 'No title' ),
+				slug: isTemplate ? item.slug : item.title || __( 'No title' ),
 				comment_status: item.comment_status,
 				content:
 					typeof item.content === 'string'
@@ -143,6 +145,13 @@ const duplicatePost: Action< BasePost > = {
 		return (
 			<form onSubmit={ createPage }>
 				<VStack spacing={ 3 }>
+					{ typeof item.id === 'string' && (
+						<div>
+							{ __(
+								'You are about to duplicate a bundled template. Changes will not be live until you activate the new template.'
+							) }
+						</div>
+					) }
 					<InputControl
 						__next40pxDefaultSize
 						label={ __( 'Title' ) }

@@ -31,10 +31,15 @@ export default function BlockThemeControl( { id } ) {
 		onNavigateToEntityRecord,
 		getEditorSettings,
 		hasGoBack,
+		hasSpecificTemplate,
 	} = useSelect( ( select ) => {
-		const { getRenderingMode, getEditorSettings: _getEditorSettings } =
-			unlock( select( editorStore ) );
+		const {
+			getRenderingMode,
+			getEditorSettings: _getEditorSettings,
+			getCurrentPost,
+		} = unlock( select( editorStore ) );
 		const editorSettings = _getEditorSettings();
+		const currentPost = getCurrentPost();
 		return {
 			isTemplateHidden: getRenderingMode() === 'post-only',
 			onNavigateToEntityRecord: editorSettings.onNavigateToEntityRecord,
@@ -42,6 +47,7 @@ export default function BlockThemeControl( { id } ) {
 			hasGoBack: editorSettings.hasOwnProperty(
 				'onNavigateToPreviousEntityRecord'
 			),
+			hasSpecificTemplate: !! currentPost.template,
 		};
 	}, [] );
 
@@ -52,6 +58,8 @@ export default function BlockThemeControl( { id } ) {
 		'wp_template',
 		id
 	);
+	const { getEntityRecord } = useSelect( coreStore );
+	const { editEntityRecord } = useDispatch( coreStore );
 	const { createSuccessNotice } = useDispatch( noticesStore );
 	const { setRenderingMode, setDefaultRenderingMode } = unlock(
 		useDispatch( editorStore )
@@ -126,7 +134,7 @@ export default function BlockThemeControl( { id } ) {
 						<MenuGroup>
 							{ canCreateTemplate && (
 								<MenuItem
-									onClick={ () => {
+									onClick={ async () => {
 										onNavigateToEntityRecord( {
 											postId: template.id,
 											postType: 'wp_template',

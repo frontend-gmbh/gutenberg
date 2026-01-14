@@ -6,8 +6,12 @@ import clsx from 'clsx';
 /**
  * WordPress dependencies
  */
-import { Icon, __experimentalHStack as HStack } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
+import {
+	Icon,
+	__experimentalHStack as HStack,
+	privateApis as componentsPrivateApis,
+} from '@wordpress/components';
+import { __, _x } from '@wordpress/i18n';
 import { useState, useMemo } from '@wordpress/element';
 import { decodeEntities } from '@wordpress/html-entities';
 import { parse } from '@wordpress/blocks';
@@ -26,6 +30,7 @@ import { useSelect } from '@wordpress/data';
  * Internal dependencies
  */
 import { useAddedBy } from './hooks';
+import { useDefaultTemplateTypes } from '../add-new-template/utils';
 import usePatternSettings from '../page-patterns/use-pattern-settings';
 import { unlock } from '../../lock-unlock';
 
@@ -144,6 +149,58 @@ function AuthorField( { item } ) {
 export const authorField = {
 	label: __( 'Author' ),
 	id: 'author',
-	getValue: ( { item } ) => item.author_text,
+	getValue: ( { item } ) => item.author_text ?? item.author,
 	render: AuthorField,
+};
+
+export const activeField = {
+	label: __( 'Status' ),
+	id: 'active',
+	type: 'boolean',
+	getValue: ( { item } ) => item._isActive,
+	render: function Render( { item } ) {
+		const activeLabel = item._isCustom
+			? _x( 'Active when used', 'template' )
+			: _x( 'Active', 'template' );
+		const activeIntent = item._isCustom ? 'info' : 'success';
+		const isActive = item._isActive;
+		return (
+			<Badge intent={ isActive ? activeIntent : 'default' }>
+				{ isActive ? activeLabel : _x( 'Inactive', 'template' ) }
+			</Badge>
+		);
+	},
+};
+
+export const useThemeField = () => {
+	const activeTheme = useSelect( ( select ) =>
+		select( coreStore ).getCurrentTheme()
+	);
+	return useMemo(
+		() => ( {
+			label: __( 'Compatible Theme' ),
+			id: 'theme',
+			getValue: ( { item } ) => item.theme,
+			render: function Render( { item } ) {
+				if ( item.theme === activeTheme.stylesheet ) {
+					return <Badge intent="success">{ item.theme }</Badge>;
+				}
+				return <Badge intent="error">{ item.theme }</Badge>;
+			},
+		} ),
+		[ activeTheme ]
+	);
+};
+
+export const slugField = {
+	label: __( 'Template Type' ),
+	id: 'slug',
+	getValue: ( { item } ) => item.slug,
+	render: function Render( { item } ) {
+		const defaultTemplateTypes = useAllDefaultTemplateTypes();
+		const defaultTemplateType = defaultTemplateTypes.find(
+			( type ) => type.slug === item.slug
+		);
+		return defaultTemplateType?.title || _x( 'Custom', 'template type' );
+	},
 };
