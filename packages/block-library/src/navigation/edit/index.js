@@ -28,12 +28,7 @@ import {
 	useBlockEditingMode,
 	BlockControls,
 } from '@wordpress/block-editor';
-import {
-	EntityProvider,
-	store as coreStore,
-	useEntityId,
-	useEntityRecord,
-} from '@wordpress/core-data';
+import { EntityProvider, store as coreStore } from '@wordpress/core-data';
 import { useDispatch, useSelect } from '@wordpress/data';
 import {
 	__experimentalToolsPanel as ToolsPanel,
@@ -81,10 +76,8 @@ import AccessibleDescription from './accessible-description';
 import AccessibleMenuDescription from './accessible-menu-description';
 import { unlock } from '../../lock-unlock';
 import { useToolsPanelDropdownMenuProps } from '../../utils/hooks';
-import {
-	DEFAULT_BLOCK,
-	NAVIGATION_OVERLAY_TEMPLATE_PART_AREA,
-} from '../constants';
+import { isWithinNavigationOverlay } from '../../utils/is-within-overlay';
+import { DEFAULT_BLOCK } from '../constants';
 
 /**
  * Component that renders the Add page button for the Navigation block.
@@ -481,24 +474,15 @@ function Navigation( {
 	);
 
 	// Check if this navigation block is inside an overlay template part.
-	// If so, disable the overlay menu to prevent nested overlays.
-	// Use the entity context to get the current template part being edited.
-	const templatePartId = useEntityId( 'postType', 'wp_template_part' );
-	const { record: templatePart } = useEntityRecord(
-		'postType',
-		'wp_template_part',
-		templatePartId
-	);
-	const isWithinOverlayTemplatePart =
-		templatePart?.area === NAVIGATION_OVERLAY_TEMPLATE_PART_AREA;
+	const isWithinOverlay = useSelect( () => isWithinNavigationOverlay(), [] );
 
 	// Force overlayMenu to 'never' if within an overlay template part
-	// to prevents overlays within overlays.
+	// to prevent overlays within overlays.
 	useEffect( () => {
-		if ( isWithinOverlayTemplatePart && overlayMenu !== 'never' ) {
+		if ( isWithinOverlay && overlayMenu !== 'never' ) {
 			setAttributes( { overlayMenu: 'never' } );
 		}
-	}, [ isWithinOverlayTemplatePart, overlayMenu, setAttributes ] );
+	}, [ isWithinOverlay, overlayMenu, setAttributes ] );
 
 	const isResponsive = 'never' !== overlayMenu;
 	const blockProps = useBlockProps( {
@@ -812,7 +796,7 @@ function Navigation( {
 					</ToolsPanel>
 				) }
 			</InspectorControls>
-			{ isOverlayExperimentEnabled && ! isWithinOverlayTemplatePart && (
+			{ isOverlayExperimentEnabled && ! isWithinOverlay && (
 				<InspectorControls>
 					<OverlayPanel
 						overlayMenu={ overlayMenu }
