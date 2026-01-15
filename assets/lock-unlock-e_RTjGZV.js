@@ -1,0 +1,1 @@
+import{_ as o}from"./iframe-2TvY6Iig.js";const{unlock:r}=o("I acknowledge private features are not for use in themes or plugins and doing so will break in the next version of WordPress.","@wordpress/block-editor");export{r as u};

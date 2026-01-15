@@ -1,0 +1,1 @@
+import{r as c}from"./iframe-2TvY6Iig.js";function V({defaultValue:a,onChange:t,value:l}){const e=typeof l<"u",f=e?l:a,[i,u]=c.useState(f),n=e?l:i,r=c.useCallback((o,...d)=>{u(o),t?.(o,...d)},[t]);let s;return e&&typeof t=="function"?s=t:!e&&typeof t=="function"?s=r:s=u,[n,s]}export{V as u};

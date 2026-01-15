@@ -1,0 +1,1 @@
+import{u as n}from"./index-DDuNjadK.js";function c(){return n(r=>{const{ownerDocument:e}=r;if(!e)return;const{defaultView:t}=e;if(!t)return;function u(){e&&e.activeElement===r&&r.focus()}return t.addEventListener("blur",u),()=>{t.removeEventListener("blur",u)}},[])}export{c as u};

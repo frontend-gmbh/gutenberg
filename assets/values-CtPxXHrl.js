@@ -1,0 +1,1 @@
+function r(n){return n!=null}function i(n){const t=n==="";return!r(n)||t}function s(n=[],t){return n.find(r)??t}const e=n=>parseFloat(n),o=n=>typeof n=="string"?e(n):n;export{i as a,o as e,s as g,r as i};

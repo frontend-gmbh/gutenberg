@@ -1,0 +1,1 @@
+import{i as d,g as p}from"./values-CtPxXHrl.js";import{r as s}from"./iframe-2TvY6Iig.js";const n={initial:void 0,fallback:""};function b(e,o=n){const{initial:l,fallback:f}={...n,...o},[a,i]=s.useState(e),t=d(e);s.useEffect(()=>{t&&a&&i(void 0)},[t,a]);const r=p([e,a,l],f),c=s.useCallback(u=>{t||i(u)},[t]);return[r,c]}export{b as u};

@@ -1,0 +1,1 @@
+import{c as n}from"./component-CJEJbbVp.js";import{r as l,a as p}from"./iframe-2TvY6Iig.js";function s(t,a){const{label:o,...r}=t,e=r["aria-label"]||o;return p.jsx(n,{...r,"aria-label":e,ref:a,children:o})}var i=l.forwardRef(s),m=i;export{m as c};

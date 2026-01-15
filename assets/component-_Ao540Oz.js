@@ -1,0 +1,1 @@
+import{c as a,a as l}from"./component-OVYdkCXu.js";import{u as c,F as x}from"./component-1lLb42_v.js";import{a as e}from"./iframe-2TvY6Iig.js";function i(o,t){const{children:n,isColumn:r,...s}=c(o);return e.jsx(x.Provider,{value:{flexItemDisplay:r?"block":void 0},children:e.jsx(l,{...s,ref:t,children:n})})}var m=a(i,"Flex"),d=m;export{d as c};

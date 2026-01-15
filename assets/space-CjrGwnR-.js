@@ -1,0 +1,1 @@
+function r(n){if(typeof n>"u")return;if(!n)return"0";const t=typeof n=="number"?n:Number(n);return typeof window<"u"&&window.CSS?.supports?.("margin",n.toString())||Number.isNaN(t)?n.toString():`calc(4px * ${n})`}export{r as s};

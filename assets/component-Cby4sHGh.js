@@ -1,0 +1,1 @@
+import{c as s}from"./component-CJEJbbVp.js";import{i}from"./index-DdMUBdEx.js";import{r as p,a as o}from"./iframe-2TvY6Iig.js";function c(r,t){const{icon:n,label:e,...a}=r;return o.jsx(s,{...a,isIcon:!0,"aria-label":e,showTooltip:!0,ref:t,children:o.jsx(i,{icon:n})})}var l=p.forwardRef(c),d=l;export{d as c};

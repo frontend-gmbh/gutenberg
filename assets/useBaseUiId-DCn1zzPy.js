@@ -1,0 +1,1 @@
+import{i as f,r as u}from"./iframe-2TvY6Iig.js";const l={...f};let a=0;function r(t,e="mui"){const[s,o]=u.useState(t),c=t||s;return u.useEffect(()=>{s==null&&(a+=1,o(`${e}-${a}`))},[s,e]),c}const n=l.useId;function I(t,e){if(n!==void 0){const s=n();return t??`${e}-${s}`}return r(t,e)}function i(t){return I(t,"base-ui")}export{i as u};

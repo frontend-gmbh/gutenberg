@@ -1,0 +1,1 @@
+function n(i){const r=Array.from(i.files);return Array.from(i.items).forEach(s=>{const e=s.getAsFile();e&&!r.find(({name:f,type:t,size:o})=>f===e.name&&t===e.type&&o===e.size)&&r.push(e)}),r}export{n as g};

@@ -1,0 +1,1 @@
+import{t as n,a as l}from"./index-EWCzKj8m.js";import{d as t}from"./index-BAuZ3O0F.js";import{r as e,a as r}from"./iframe-2TvY6Iig.js";function d(o,a){return e.useContext(n)?r.jsx(l,{ref:a,...o.toggleProps,children:s=>r.jsx(t,{...o,popoverProps:{...o.popoverProps},toggleProps:s})}):r.jsx(t,{...o})}var u=e.forwardRef(d),b=u;export{b as t};

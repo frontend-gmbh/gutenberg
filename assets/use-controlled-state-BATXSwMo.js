@@ -1,0 +1,1 @@
+import{i as d,g as p}from"./hook-UUdG5mum.js";import{r as s}from"./iframe-2TvY6Iig.js";var o={initial:void 0,fallback:""};function m(e,l=o){const{initial:n,fallback:r}={...o,...l},[a,i]=s.useState(e),t=d(e);s.useEffect(()=>{t&&a&&i(void 0)},[t,a]);const f=p([e,a,n],r),u=s.useCallback(c=>{t||i(c)},[t]);return[f,u]}var b=m;export{b as u};

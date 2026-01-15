@@ -1,0 +1,1 @@
+import{c as r}from"./emotion-react.browser.esm-T2caqgd_.js";import{u as x,I as n,b as p}from"./context-DbMhvW6o.js";import{u as i,a as u}from"./use-context-system-GBkKyJuM.js";function B(e){const{className:t,display:a,isBlock:o=!1,...c}=i(e,"FlexItem"),s={},l=x().flexItemDisplay;s.Base=r({display:a||l},"","");const m=u()(n,s.Base,o&&p,t);return{...c,className:m}}export{B as u};

@@ -1,0 +1,1 @@
+import{p as a}from"./index-DWJraqdh.js";function c(t,e){return r=>{const o=t(r);return o.displayName=n(e,r),o}}var n=(t,e)=>{const r=e.displayName||e.name||"Component";return`${a(t??"")}(${r})`};export{c};

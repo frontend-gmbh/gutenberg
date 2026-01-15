@@ -1,0 +1,1 @@
+var t="4px";function i(n){if(typeof n>"u")return;if(!n)return"0";const r=typeof n=="number"?n:Number(n);return typeof window<"u"&&window.CSS?.supports?.("margin",n.toString())||Number.isNaN(r)?n.toString():`calc(${t} * ${n})`}export{i as s};

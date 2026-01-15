@@ -1,0 +1,38 @@
+import{r as p,j as n,c as d,f as b}from"./iframe-2TvY6Iig.js";import{a as C,i as x}from"./default-i18n-SWt35ZM4.js";import{N as k}from"./index-w5J4Ezdm.js";import{I as w}from"./input-prefix-wrapper-BgXFHddd.js";import{I as A}from"./input-suffix-wrapper-Gn_aDXNL.js";import{u as P}from"./index-CY5Zbyid.js";import{F as I}from"./component-BiaHS86M.js";import{S as N}from"./component-Cu4YN_oY.js";import{F as D}from"./component-l_ygUujJ.js";const m={"circle-root":"_circle-root_f9nmi_46","circle-indicator-wrapper":"_circle-indicator-wrapper_f9nmi_59","circle-indicator":"_circle-indicator_f9nmi_59"};function f({value:a,onChange:o,className:c,...v}){const l=p.useRef(null),r=p.useRef(),t=p.useRef(),u=()=>{if(l.current===null)return;const e=l.current.getBoundingClientRect();r.current={x:e.x+e.width/2,y:e.y+e.height/2}},s=e=>{if(e!==void 0&&(e.preventDefault(),e.target?.focus(),r.current!==void 0&&o!==void 0)){const{x:_,y}=r.current;o(R(_,y,e.clientX,e.clientY))}},{startDrag:g,isDragging:i}=P({onDragStart:e=>{u(),s(e)},onDragMove:s,onDragEnd:s});return p.useEffect(()=>{i?(t.current===void 0&&(t.current=document.body.style.cursor),document.body.style.cursor="grabbing"):(document.body.style.cursor=t.current||"",t.current=void 0)},[i]),n("div",{ref:l,onMouseDown:g,className:d("components-angle-picker-control__angle-circle",m["circle-root"],c),...v,children:n("div",{style:a?{transform:`rotate(${a}deg)`}:void 0,className:d("components-angle-picker-control__angle-circle-indicator-wrapper",m["circle-indicator-wrapper"]),tabIndex:-1,children:n("div",{className:d("components-angle-picker-control__angle-circle-indicator",m["circle-indicator"])})})})}function R(a,o,c,v){const l=v-o,r=c-a,t=Math.atan2(l,r),u=Math.round(t*(180/Math.PI))+90;return u<0?360+u:u}try{f.displayName="AngleCircle",f.__docgenInfo={description:"",displayName:"AngleCircle",props:{onChange:{defaultValue:null,description:"A function that receives the new value of the input.",name:"onChange",required:!0,type:{name:"(value: number) => void"}},value:{defaultValue:null,description:`The current value of the input. The value represents an angle in degrees
+and should be a value between 0 and 360.`,name:"value",required:!0,type:{name:"string | number"}},as:{defaultValue:null,description:"The HTML element or React component to render the component as.",name:"as",required:!1,type:{name:"enum",value:[{value:'"symbol"'},{value:'"object"'},{value:'"select"'},{value:'"a"'},{value:'"abbr"'},{value:'"address"'},{value:'"area"'},{value:'"article"'},{value:'"aside"'},{value:'"audio"'},{value:'"b"'},{value:'"base"'},{value:'"bdi"'},{value:'"bdo"'},{value:'"big"'},{value:'"blockquote"'},{value:'"body"'},{value:'"br"'},{value:'"button"'},{value:'"canvas"'},{value:'"caption"'},{value:'"center"'},{value:'"cite"'},{value:'"code"'},{value:'"col"'},{value:'"colgroup"'},{value:'"data"'},{value:'"datalist"'},{value:'"dd"'},{value:'"del"'},{value:'"details"'},{value:'"dfn"'},{value:'"dialog"'},{value:'"div"'},{value:'"dl"'},{value:'"dt"'},{value:'"em"'},{value:'"embed"'},{value:'"fieldset"'},{value:'"figcaption"'},{value:'"figure"'},{value:'"footer"'},{value:'"form"'},{value:'"h1"'},{value:'"h2"'},{value:'"h3"'},{value:'"h4"'},{value:'"h5"'},{value:'"h6"'},{value:'"head"'},{value:'"header"'},{value:'"hgroup"'},{value:'"hr"'},{value:'"html"'},{value:'"i"'},{value:'"iframe"'},{value:'"img"'},{value:'"input"'},{value:'"ins"'},{value:'"kbd"'},{value:'"keygen"'},{value:'"label"'},{value:'"legend"'},{value:'"li"'},{value:'"link"'},{value:'"main"'},{value:'"map"'},{value:'"mark"'},{value:'"menu"'},{value:'"menuitem"'},{value:'"meta"'},{value:'"meter"'},{value:'"nav"'},{value:'"noindex"'},{value:'"noscript"'},{value:'"ol"'},{value:'"optgroup"'},{value:'"option"'},{value:'"output"'},{value:'"p"'},{value:'"param"'},{value:'"picture"'},{value:'"pre"'},{value:'"progress"'},{value:'"q"'},{value:'"rp"'},{value:'"rt"'},{value:'"ruby"'},{value:'"s"'},{value:'"samp"'},{value:'"search"'},{value:'"slot"'},{value:'"script"'},{value:'"section"'},{value:'"small"'},{value:'"source"'},{value:'"span"'},{value:'"strong"'},{value:'"style"'},{value:'"sub"'},{value:'"summary"'},{value:'"sup"'},{value:'"table"'},{value:'"template"'},{value:'"tbody"'},{value:'"td"'},{value:'"textarea"'},{value:'"tfoot"'},{value:'"th"'},{value:'"thead"'},{value:'"time"'},{value:'"title"'},{value:'"tr"'},{value:'"track"'},{value:'"u"'},{value:'"ul"'},{value:'"var"'},{value:'"video"'},{value:'"wbr"'},{value:'"webview"'},{value:'"svg"'},{value:'"animate"'},{value:'"animateMotion"'},{value:'"animateTransform"'},{value:'"circle"'},{value:'"clipPath"'},{value:'"defs"'},{value:'"desc"'},{value:'"ellipse"'},{value:'"feBlend"'},{value:'"feColorMatrix"'},{value:'"feComponentTransfer"'},{value:'"feComposite"'},{value:'"feConvolveMatrix"'},{value:'"feDiffuseLighting"'},{value:'"feDisplacementMap"'},{value:'"feDistantLight"'},{value:'"feDropShadow"'},{value:'"feFlood"'},{value:'"feFuncA"'},{value:'"feFuncB"'},{value:'"feFuncG"'},{value:'"feFuncR"'},{value:'"feGaussianBlur"'},{value:'"feImage"'},{value:'"feMerge"'},{value:'"feMergeNode"'},{value:'"feMorphology"'},{value:'"feOffset"'},{value:'"fePointLight"'},{value:'"feSpecularLighting"'},{value:'"feSpotLight"'},{value:'"feTile"'},{value:'"feTurbulence"'},{value:'"filter"'},{value:'"foreignObject"'},{value:'"g"'},{value:'"image"'},{value:'"line"'},{value:'"linearGradient"'},{value:'"marker"'},{value:'"mask"'},{value:'"metadata"'},{value:'"mpath"'},{value:'"path"'},{value:'"pattern"'},{value:'"polygon"'},{value:'"polyline"'},{value:'"radialGradient"'},{value:'"rect"'},{value:'"set"'},{value:'"stop"'},{value:'"switch"'},{value:'"text"'},{value:'"textPath"'},{value:'"tspan"'},{value:'"use"'},{value:'"view"'}]}}}}}catch{}function M(a,o){const{className:c,label:v=C("Angle"),onChange:l,value:r,...t}=a,u=i=>{if(l===void 0)return;const e=i!==void 0&&i!==""?parseInt(i,10):0;l(e)},s=d("components-angle-picker-control",c),g=x()?{prefix:n(w,{children:"°"})}:{suffix:n(A,{children:"°"})};return b(D,{...t,ref:o,className:s,gap:2,children:[n(I,{children:n(k,{__next40pxDefaultSize:!0,label:v,className:"components-angle-picker-control__input-field",max:360,min:0,onChange:u,step:"1",value:r,spinControls:"none",...g})}),n(N,{marginBottom:"1",marginTop:"auto",children:n(f,{"aria-hidden":"true",value:r,onChange:l})})]})}const h=p.forwardRef(M);try{h.displayName="AnglePickerControl",h.__docgenInfo={description:`\`AnglePickerControl\` is a React component to render a UI that allows users to
+pick an angle. Users can choose an angle in a visual UI with the mouse by
+dragging an angle indicator inside a circle or by directly inserting the
+desired angle in a text field.
+
+\`\`\`jsx
+import { useState } from '@wordpress/element';
+import { AnglePickerControl } from '@wordpress/components';
+
+function Example() {
+  const [ angle, setAngle ] = useState( 0 );
+  return (
+    <AnglePickerControl
+      value={ angle }
+      onChange={ setAngle }
+    />
+  );
+}
+\`\`\``,displayName:"AnglePickerControl",props:{}}}catch{}try{anglepickercontrol.displayName="anglepickercontrol",anglepickercontrol.__docgenInfo={description:`\`AnglePickerControl\` is a React component to render a UI that allows users to
+pick an angle. Users can choose an angle in a visual UI with the mouse by
+dragging an angle indicator inside a circle or by directly inserting the
+desired angle in a text field.
+
+\`\`\`jsx
+import { useState } from '@wordpress/element';
+import { AnglePickerControl } from '@wordpress/components';
+
+function Example() {
+  const [ angle, setAngle ] = useState( 0 );
+  return (
+    <AnglePickerControl
+      value={ angle }
+      onChange={ setAngle }
+    />
+  );
+}
+\`\`\``,displayName:"anglepickercontrol",props:{}}}catch{}export{h as A};

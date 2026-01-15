@@ -1,0 +1,3 @@
+import{j as e}from"./iframe-2TvY6Iig.js";import{C as r}from"./index-T9FElN6z.js";import"./preload-helper-Zf8nSx-t.js";const l={component:r,title:"Components/Selection & Input/Color/ColorIndicator",id:"components-colorindicator",argTypes:{colorValue:{control:{type:"color"}}},parameters:{controls:{expanded:!0},docs:{canvas:{sourceState:"shown"}}}},t=({...a})=>e(r,{...a}),o=t.bind({});o.args={colorValue:"#0073aa"};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`({
+  ...args
+}) => <ColorIndicator {...args} />`,...o.parameters?.docs?.source}}};export{o as Default,l as default};

@@ -1,0 +1,1 @@
+import{r as u}from"./iframe-2TvY6Iig.js";var e=new WeakMap;function r(t){const n=e.get(t)||0;return e.set(t,n+1),n}function c(t,n,a){return u.useMemo(()=>{if(a)return a;const s=r(t);return n?`${n}-${s}`:s},[t,a,n])}var o=c;export{o as u};

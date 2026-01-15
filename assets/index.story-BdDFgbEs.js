@@ -1,0 +1,51 @@
+import{X as re,r as P,j as T,F as ne,f as U}from"./iframe-2TvY6Iig.js";import"./default-i18n-SWt35ZM4.js";import{i as oe}from"./platform-Dx-VEEF7.js";import"./preload-helper-Zf8nSx-t.js";var j={exports:{}},z;function ae(){return z||(z=1,(function(l){(function(p,_,h){if(!p)return;for(var f={8:"backspace",9:"tab",13:"enter",16:"shift",17:"ctrl",18:"alt",20:"capslock",27:"esc",32:"space",33:"pageup",34:"pagedown",35:"end",36:"home",37:"left",38:"up",39:"right",40:"down",45:"ins",46:"del",91:"meta",93:"meta",224:"meta"},y={106:"*",107:"+",109:"-",110:".",111:"/",186:";",187:"=",188:",",189:"-",190:".",191:"/",192:"`",219:"[",220:"\\",221:"]",222:"'"},g={"~":"`","!":"1","@":"2","#":"3",$:"4","%":"5","^":"6","&":"7","*":"8","(":"9",")":"0",_:"-","+":"=",":":";",'"':"'","<":",",">":".","?":"/","|":"\\"},b={option:"alt",command:"meta",return:"enter",escape:"esc",plus:"+",mod:/Mac|iPod|iPhone|iPad/.test(navigator.platform)?"meta":"ctrl"},x,m=1;m<20;++m)f[111+m]="f"+m;for(m=0;m<=9;++m)f[m+96]=m.toString();function E(e,t,n){if(e.addEventListener){e.addEventListener(t,n,!1);return}e.attachEvent("on"+t,n)}function K(e){if(e.type=="keypress"){var t=String.fromCharCode(e.which);return e.shiftKey||(t=t.toLowerCase()),t}return f[e.which]?f[e.which]:y[e.which]?y[e.which]:String.fromCharCode(e.which).toLowerCase()}function I(e,t){return e.sort().join(",")===t.sort().join(",")}function L(e){var t=[];return e.shiftKey&&t.push("shift"),e.altKey&&t.push("alt"),e.ctrlKey&&t.push("ctrl"),e.metaKey&&t.push("meta"),t}function D(e){if(e.preventDefault){e.preventDefault();return}e.returnValue=!1}function q(e){if(e.stopPropagation){e.stopPropagation();return}e.cancelBubble=!0}function F(e){return e=="shift"||e=="ctrl"||e=="alt"||e=="meta"}function X(){if(!x){x={};for(var e in f)e>95&&e<112||f.hasOwnProperty(e)&&(x[f[e]]=e)}return x}function W(e,t,n){return n||(n=X()[e]?"keydown":"keypress"),n=="keypress"&&t.length&&(n="keydown"),n}function J(e){return e==="+"?["+"]:(e=e.replace(/\+{2}/g,"+plus"),e.split("+"))}function G(e,t){var n,c,k,A=[];for(n=J(e),k=0;k<n.length;++k)c=n[k],b[c]&&(c=b[c]),t&&t!="keypress"&&g[c]&&(c=g[c],A.push("shift")),F(c)&&A.push(c);return t=W(c,A,t),{key:c,modifiers:A,action:t}}function B(e,t){return e===null||e===_?!1:e===t?!0:B(e.parentNode,t)}function v(e){var t=this;if(e=e||_,!(t instanceof v))return new v(e);t.target=e,t._callbacks={},t._directMap={};var n={},c,k=!1,A=!1,N=!1;function O(r){r=r||{};var a=!1,s;for(s in n){if(r[s]){a=!0;continue}n[s]=0}a||(N=!1)}function $(r,a,s,o,u,w){var i,d,C=[],S=s.type;if(!t._callbacks[r])return[];for(S=="keyup"&&F(r)&&(a=[r]),i=0;i<t._callbacks[r].length;++i)if(d=t._callbacks[r][i],!(!o&&d.seq&&n[d.seq]!=d.level)&&S==d.action&&(S=="keypress"&&!s.metaKey&&!s.ctrlKey||I(a,d.modifiers))){var ee=!o&&d.combo==u,te=o&&d.seq==o&&d.level==w;(ee||te)&&t._callbacks[r].splice(i,1),C.push(d)}return C}function V(r,a,s,o){t.stopCallback(a,a.target||a.srcElement,s,o)||r(a,s)===!1&&(D(a),q(a))}t._handleKey=function(r,a,s){var o=$(r,a,s),u,w={},i=0,d=!1;for(u=0;u<o.length;++u)o[u].seq&&(i=Math.max(i,o[u].level));for(u=0;u<o.length;++u){if(o[u].seq){if(o[u].level!=i)continue;d=!0,w[o[u].seq]=1,V(o[u].callback,s,o[u].combo,o[u].seq);continue}d||V(o[u].callback,s,o[u].combo)}var C=s.type=="keypress"&&A;s.type==N&&!F(r)&&!C&&O(w),A=d&&s.type=="keydown"};function Y(r){typeof r.which!="number"&&(r.which=r.keyCode);var a=K(r);if(a){if(r.type=="keyup"&&k===a){k=!1;return}t.handleKey(a,L(r),r)}}function Q(){clearTimeout(c),c=setTimeout(O,1e3)}function Z(r,a,s,o){n[r]=0;function u(S){return function(){N=S,++n[r],Q()}}function w(S){V(s,S,r),o!=="keyup"&&(k=K(S)),setTimeout(O,10)}for(var i=0;i<a.length;++i){var d=i+1===a.length,C=d?w:u(o||G(a[i+1]).action);H(a[i],C,o,r,i)}}function H(r,a,s,o,u){t._directMap[r+":"+s]=a,r=r.replace(/\s+/g," ");var w=r.split(" "),i;if(w.length>1){Z(r,w,a,s);return}i=G(r,s),t._callbacks[i.key]=t._callbacks[i.key]||[],$(i.key,i.modifiers,{type:i.action},o,r,u),t._callbacks[i.key][o?"unshift":"push"]({callback:a,modifiers:i.modifiers,action:i.action,seq:o,level:u,combo:r})}t._bindMultiple=function(r,a,s){for(var o=0;o<r.length;++o)H(r[o],a,s)},E(e,"keypress",Y),E(e,"keydown",Y),E(e,"keyup",Y)}v.prototype.bind=function(e,t,n){var c=this;return e=e instanceof Array?e:[e],c._bindMultiple.call(c,e,t,n),c},v.prototype.unbind=function(e,t){var n=this;return n.bind.call(n,e,function(){},t)},v.prototype.trigger=function(e,t){var n=this;return n._directMap[e+":"+t]&&n._directMap[e+":"+t]({},e),n},v.prototype.reset=function(){var e=this;return e._callbacks={},e._directMap={},e},v.prototype.stopCallback=function(e,t){var n=this;if((" "+t.className+" ").indexOf(" mousetrap ")>-1||B(t,n.target))return!1;if("composedPath"in e&&typeof e.composedPath=="function"){var c=e.composedPath()[0];c!==e.target&&(t=c)}return t.tagName=="INPUT"||t.tagName=="SELECT"||t.tagName=="TEXTAREA"||t.isContentEditable},v.prototype.handleKey=function(){var e=this;return e._handleKey.apply(e,arguments)},v.addKeycodes=function(e){for(var t in e)e.hasOwnProperty(t)&&(f[t]=e[t]);x=null},v.init=function(){var e=v(_);for(var t in e)t.charAt(0)!=="_"&&(v[t]=(function(n){return function(){return e[n].apply(e,arguments)}})(t))},v.init(),p.Mousetrap=v,l.exports&&(l.exports=v)})(typeof window<"u"?window:null,typeof window<"u"?document:null)})(j)),j.exports}var ie=ae();const se=re(ie);(function(l){if(l){var p={},_=l.prototype.stopCallback;l.prototype.stopCallback=function(h,f,y,g){var b=this;return b.paused?!0:p[y]||p[g]?!1:_.call(b,h,f,y)},l.prototype.bindGlobal=function(h,f,y){var g=this;if(g.bind(h,f,y),h instanceof Array){for(var b=0;b<h.length;b++)p[h[b]]=!0;return}p[h]=!0},l.init()}})(typeof Mousetrap<"u"?Mousetrap:void 0);function ue(l,p,{bindGlobal:_=!1,eventName:h="keydown",isDisabled:f=!1,target:y}={}){const g=P.useRef(p);P.useEffect(()=>{g.current=p},[p]),P.useEffect(()=>{if(f)return;const b=new se(y&&y.current?y.current:document);return(Array.isArray(l)?l:[l]).forEach(m=>{const E=m.split("+"),K=new Set(E.filter(q=>q.length>1)),I=K.has("alt"),L=K.has("shift");if(oe()&&(K.size===1&&I||K.size===2&&I&&L))throw new Error(`Cannot bind ${m}. Alt and Shift+Alt modifiers are reserved for character input.`);b[_?"bindGlobal":"bind"](m,(...q)=>g.current(...q),h)}),()=>{b.reset()}},[l,_,h,y,f])}var le=ue;function ce({target:l,callback:p,shortcut:_,bindGlobal:h,eventName:f}){return le(_,p,{bindGlobal:h,target:l,eventName:f}),null}function R({children:l,shortcuts:p,bindGlobal:_,eventName:h}){const f=P.useRef(null),y=Object.entries(p??{}).map(([g,b])=>T(ce,{shortcut:g,callback:b,bindGlobal:_,eventName:h,target:f},g));return P.Children.count(l)?U("div",{ref:f,children:[y,l]}):T(ne,{children:y})}try{R.displayName="KeyboardShortcuts",R.__docgenInfo={description:`\`KeyboardShortcuts\` is a component which handles keyboard sequences during the lifetime of the rendering element.
+
+When passed children, it will capture key events which occur on or within the children. If no children are passed, events are captured on the document.
+
+It uses the [Mousetrap](https://craig.is/killing/mice) library to implement keyboard sequence bindings.
+
+\`\`\`jsx
+import { KeyboardShortcuts } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+
+const MyKeyboardShortcuts = () => {
+	const [ isAllSelected, setIsAllSelected ] = useState( false );
+	const selectAll = () => {
+		setIsAllSelected( true );
+	};
+
+	return (
+		<div>
+			<KeyboardShortcuts
+				shortcuts={ {
+					'mod+a': selectAll,
+				} }
+			/>
+			[cmd/ctrl + A] Combination pressed? { isAllSelected ? 'Yes' : 'No' }
+		</div>
+	);
+};
+\`\`\``,displayName:"KeyboardShortcuts",props:{children:{defaultValue:null,description:"Elements to render, upon whom key events are to be monitored.",name:"children",required:!1,type:{name:"ReactNode"}},shortcuts:{defaultValue:null,description:`An object of shortcut bindings, where each key is a keyboard combination,
+the value of which is the callback to be invoked when the key combination is pressed.
+
+The value of each shortcut should be a consistent function reference, not an anonymous function.
+Otherwise, the callback will not be correctly unbound when the component unmounts.
+
+The \`KeyboardShortcuts\` component will not update to reflect a changed \`shortcuts\` prop.
+If you need to change shortcuts, mount a separate \`KeyboardShortcuts\` element,
+which can be achieved by assigning a unique \`key\` prop.
+@see {@link https://craig.is/killing/mice Mousetrap documentation}`,name:"shortcuts",required:!0,type:{name:"Record<string, (event: ExtendedKeyboardEvent, combo: string) => void>"}},bindGlobal:{defaultValue:null,description:"By default, a callback will not be invoked if the key combination occurs in an editable field.\nPass `bindGlobal` as `true` if the key events should be observed globally, including within editable fields.\n\nTip: If you need some but not all keyboard events to be observed globally,\nsimply render two distinct `KeyboardShortcuts` elements, one with and one without the `bindGlobal` prop.",name:"bindGlobal",required:!1,type:{name:"any"}},eventName:{defaultValue:null,description:"By default, a callback is invoked in response to the `keydown` event.\nTo override this, pass `eventName` with the name of a specific keyboard event.",name:"eventName",required:!1,type:{name:"any"}}}}}catch{}const ve={component:R,title:"Components/Utilities/KeyboardShortcuts",id:"components-keyboardshortcuts",parameters:{controls:{expanded:!0},docs:{canvas:{sourceState:"shown"}}}},fe=l=>T(R,{...l}),M=fe.bind({});M.args={shortcuts:{a:()=>window.alert('You hit "a"!'),b:()=>window.alert('You hit "b"!')},children:U("div",{children:[T("p",{children:'Hit the "a" or "b" key in this textarea:'}),T("textarea",{})]})};M.parameters={docs:{source:{code:`
+<KeyboardShortcuts
+  shortcuts={{
+    a: () => window.alert('You hit "a"!'),
+    b: () => window.alert('You hit "b"!'),
+  }}
+>
+  <div>
+    <p>
+      Hit the "a" or "b" key in this textarea:
+    </p>
+    <textarea />
+  </div>
+</KeyboardShortcuts>
+            `}}};M.parameters={...M.parameters,docs:{...M.parameters?.docs,source:{originalSource:"props => <KeyboardShortcuts {...props} />",...M.parameters?.docs?.source}}};export{M as Default,ve as default};

@@ -1,0 +1,67 @@
+import{r as p,a3 as Q,j as a,e as X,f as C,c as Y}from"./iframe-2TvY6Iig.js";import{w as b,k as q,n as O}from"./names-BarMHYgS.js";import{a as I}from"./a11y-BEyCqtkW.js";import{u as Z}from"./index-BjXx3EE5.js";import{s as M}from"./sprintf-CXbjGC2q.js";import{a as f}from"./default-i18n-SWt35ZM4.js";import{D as ee}from"./index-djnRrerp.js";import{C as v}from"./index-BHXdZydh.js";import{H as oe}from"./component-CSsaRVTa.js";import{C as te}from"./config-values-CkVNYk_w.js";import{D as ne}from"./dropdown-content-wrapper-Chks6K4_.js";import{V as g}from"./component-6CLxCT3h.js";import{T as S}from"./component-bxVIZkjM.js";import{C as re}from"./component-D6ywCa_c.js";function le(e){return typeof e.onChangeComplete<"u"||typeof e.disableAlpha<"u"||typeof e.color?.hex=="string"}function ae(e){if(e!==void 0){if(typeof e=="string")return e;if(e.hex)return e.hex}}const se=Q(e=>{const o=b(e),n=o.toHex(),r=o.toRgb(),s=o.toHsv(),l=o.toHsl();return{hex:n,rgb:r,hsv:s,hsl:l,source:"hex",oldHue:l.h}});function ie(e){const{onChangeComplete:o}=e,n=p.useCallback(r=>{o(se(r))},[o]);return le(e)?{color:ae(e.color),enableAlpha:!e.disableAlpha,onChange:n}:{...e,color:e.color,enableAlpha:e.enableAlpha,onChange:e.onChange}}const w=e=>a(re,{...ie(e)});try{w.displayName="LegacyAdapter",w.__docgenInfo={description:"",displayName:"LegacyAdapter",props:{enableAlpha:{defaultValue:{value:"false"},description:"When `true` the color picker will display the alpha channel both in\nthe bottom inputs as well as in the color picker itself.",name:"enableAlpha",required:!1,type:{name:"boolean"}},color:{defaultValue:null,description:`The current color value to display in the picker.
+Must be a hex or hex8 string.`,name:"color",required:!1,type:{name:"LegacyColor"}},onChange:{defaultValue:null,description:"Fired when the color changes. Always passes a hex or hex8 color string.",name:"onChange",required:!1,type:{name:"(color: string) => void"}},defaultValue:{defaultValue:null,description:"An optional default value to use for the color picker.",name:"defaultValue",required:!1,type:{name:"string"}},copyFormat:{defaultValue:null,description:"The format to copy when clicking the displayed color format.",name:"copyFormat",required:!1,type:{name:"enum",value:[{value:'"rgb"'},{value:'"hsl"'},{value:'"hex"'}]}},onChangeComplete:{defaultValue:null,description:"@deprecated",name:"onChangeComplete",required:!0,type:{name:"(colors: LegacyColor) => void"}},oldHue:{defaultValue:null,description:"@deprecated",name:"oldHue",required:!0,type:{name:"string"}},disableAlpha:{defaultValue:null,description:"@deprecated",name:"disableAlpha",required:!0,type:{name:"boolean"}}}}}catch{}function P(e,o,n,r){const s=e?{asButtons:!0}:{asButtons:!1,loop:o},l={"aria-labelledby":r,"aria-label":r?void 0:n||f("Custom color picker")};return{metaProps:s,labelProps:l}}try{P.displayName="getComputeCircularOptionPickerCommonProps",P.__docgenInfo={description:"Computes the common props for the CircularOptionPicker.",displayName:"getComputeCircularOptionPickerCommonProps",props:{}}}catch{}const ce=X(oe,{target:"ev9wop70"})("text-transform:uppercase;line-height:24px;font-weight:",te.fontWeightMedium,";&&&{font-size:11px;margin-bottom:0;}");q([O,I]);const H=e=>{const o=/var\(/.test(e??""),n=/color-mix\(/.test(e??"");return!o&&!n},pe=(e,o=[],n=!1)=>{if(!e)return"";const r=e?H(e):!1,s=r?b(e).toHex():e,l=n?o:[{colors:o}];for(const{colors:u}of l)for(const{name:i,color:c}of u){const t=r?b(c).toHex():c;if(s===t)return i}return f("Custom")},ue=e=>Array.isArray(e.colors)&&!("color"in e),de=e=>e.length>0&&e.every(o=>ue(o)),me=(e,o)=>{if(!e||!o||H(e))return e;const{ownerDocument:n}=o,{defaultView:r}=n,s=r?.getComputedStyle(o).backgroundColor;return s?b(s).toHex():e};q([O,I]);function L({className:e,clearColor:o,colors:n,onChange:r,value:s,...l}){const u=p.useMemo(()=>n.map(({color:i,name:c},t)=>{const d=b(i),m=s===i;return a(v.Option,{isSelected:m,selectedIconProps:m?{fill:d.contrast()>d.contrast("#000")?"#fff":"#000"}:{},tooltipText:c||M(f("Color code: %s"),i),style:{backgroundColor:i,color:i},onClick:m?o:()=>r(i,t)},`${i}-${t}`)}),[n,s,r,o]);return a(v.OptionGroup,{className:e,options:u,...l})}function D({className:e,clearColor:o,colors:n,onChange:r,value:s,headingLevel:l}){const u=Z(D,"color-palette");return n.length===0?null:a(g,{spacing:3,className:e,children:n.map(({name:i,colors:c},t)=>{const d=`${u}-${t}`;return C(g,{spacing:2,children:[a(ce,{id:d,level:l,children:i}),a(L,{clearColor:o,colors:c,onChange:m=>r(m,t),value:s,"aria-labelledby":d})]},t)})})}function k({isRenderedInSidebar:e,popoverProps:o,...n}){const r=p.useMemo(()=>({shift:!0,resize:!1,...e?{placement:"left-start",offset:34}:{placement:"bottom",offset:8},...o}),[e,o]);return a(ee,{contentClassName:"components-color-palette__custom-color-dropdown-content",popoverProps:r,...n})}function fe(e,o){const{asButtons:n,loop:r,clearable:s=!0,colors:l=[],disableCustomColors:u=!1,enableAlpha:i=!1,onChange:c,value:t,__experimentalIsRenderedInSidebar:d=!1,headingLevel:m=2,"aria-label":z,"aria-labelledby":R,...j}=e,[W,$]=p.useState(t),x=p.useCallback(()=>c(void 0),[c]),B=p.useCallback(h=>{$(me(t,h))},[t]),y=de(l),V=p.useMemo(()=>pe(t,l,y),[t,l,y]),F=()=>a(ne,{paddingSize:"none",children:a(w,{color:W,onChange:h=>c(h),enableAlpha:i})}),E=t?.startsWith("#"),_=t?.replace(/^var\((.+)\)$/,"$1"),U=_?M(f('Custom color picker. The currently selected color is called "%1$s" and has a value of "%2$s".'),V,_):f("Custom color picker"),N={clearColor:x,onChange:c,value:t},A=!!s&&a(v.ButtonAction,{onClick:x,accessibleWhenDisabled:!0,disabled:!t,children:f("Clear")}),{metaProps:G,labelProps:J}=P(n,r,z,R);return C(g,{spacing:3,ref:o,...j,children:[!u&&a(k,{isRenderedInSidebar:d,renderContent:F,renderToggle:({isOpen:h,onToggle:K})=>C(g,{className:"components-color-palette__custom-color-wrapper",spacing:0,children:[a("button",{ref:B,className:"components-color-palette__custom-color-button","aria-expanded":h,"aria-haspopup":"true",onClick:K,"aria-label":U,style:{background:t},type:"button"}),C(g,{className:"components-color-palette__custom-color-text-wrapper",spacing:.5,children:[a(S,{className:"components-color-palette__custom-color-name",children:t?V:f("No color selected")}),a(S,{className:Y("components-color-palette__custom-color-value",{"components-color-palette__custom-color-value--is-hex":E}),children:_})]})]})}),(l.length>0||A)&&a(v,{...G,...J,actions:A,options:y?a(D,{...N,headingLevel:m,colors:l,value:t}):a(L,{...N,colors:l,value:t})})]})}const T=p.forwardRef(fe);try{k.displayName="CustomColorPickerDropdown",k.__docgenInfo={description:"",displayName:"CustomColorPickerDropdown",props:{className:{defaultValue:null,description:"The className of the global container.",name:"className",required:!1,type:{name:"string"}},contentClassName:{defaultValue:null,description:`If you want to target the dropdown menu for styling purposes,
+you need to provide a contentClassName because it's not being rendered
+as a child of the container node.`,name:"contentClassName",required:!1,type:{name:"string"}},expandOnMobile:{defaultValue:{value:"false"},description:"Opt-in prop to show popovers fullscreen on mobile.",name:"expandOnMobile",required:!1,type:{name:"boolean"}},focusOnMount:{defaultValue:{value:"'firstElement'"},description:`By default, the first tabbable element in the popover will receive focus
+when it mounts. This is the same as setting this prop to "firstElement".
+Specifying a true value will focus the container instead.
+Specifying a false value disables the focus handling entirely
+(this should only be done when an appropriately accessible
+substitute behavior exists).`,name:"focusOnMount",required:!1,type:{name:'boolean | "firstElement"'}},headerTitle:{defaultValue:null,description:`Set this to customize the text that is shown in the dropdown's header
+when it is fullscreen on mobile.`,name:"headerTitle",required:!1,type:{name:"string"}},onClose:{defaultValue:null,description:"A callback invoked when the popover should be closed.",name:"onClose",required:!1,type:{name:"() => void"}},onToggle:{defaultValue:null,description:`A callback invoked when the state of the dropdown changes
+from open to closed and vice versa.`,name:"onToggle",required:!1,type:{name:"(willOpen: boolean) => void"}},popoverProps:{defaultValue:null,description:`Properties of popoverProps object will be passed as props
+to the Popover component.
+Use this object to access properties/features
+of the Popover component that are not already exposed
+in the Dropdown component,
+e.g.: the ability to have the popover without an arrow.`,name:"popoverProps",required:!1,type:{name:'Omit<ComponentPropsWithoutRef<WordPressComponent<ElementType<any, keyof IntrinsicElements>, Omit<WordPressComponentProps<PopoverProps, "div", false>, "onDrag" | ... 56 more ... | "ignoreStrict"> & RefAttributes<...>, boolean> & { ...; }>, "children">'}},renderContent:{defaultValue:null,description:`A callback invoked to render the content of the dropdown menu.
+Its first argument is the same as the renderToggle prop.`,name:"renderContent",required:!0,type:{name:"(props: CallbackProps) => ReactNode"}},renderToggle:{defaultValue:null,description:`A callback invoked to render the Dropdown Toggle Button.
+
+The first argument of the callback is an object
+containing the following properties:
+
+- isOpen: whether the dropdown menu is opened or not
+- onToggle: A function switching the dropdown menu's state
+from open to closed and vice versa
+- onClose: A function that closes the menu if invoked`,name:"renderToggle",required:!0,type:{name:"(props: CallbackProps) => ReactNode"}},style:{defaultValue:null,description:"The style of the global container.",name:"style",required:!1,type:{name:"CSSProperties"}},position:{defaultValue:null,description:"Legacy way to specify the popover's position with respect to its anchor.\nFor details about the possible values, see the `Popover` component's docs.\n_Note: this prop is deprecated. Use the `popoverProps.placement` prop\ninstead._\n@deprecated",name:"position",required:!1,type:{name:"enum",value:[{value:'"middle"'},{value:'"bottom"'},{value:'"top"'},{value:'"middle center"'},{value:'"middle left"'},{value:'"middle right"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"middle center left"'},{value:'"middle center right"'},{value:'"middle center bottom"'},{value:'"middle center top"'},{value:'"middle left left"'},{value:'"middle left right"'},{value:'"middle left bottom"'},{value:'"middle left top"'},{value:'"middle right left"'},{value:'"middle right right"'},{value:'"middle right bottom"'},{value:'"middle right top"'},{value:'"bottom center left"'},{value:'"bottom center right"'},{value:'"bottom center bottom"'},{value:'"bottom center top"'},{value:'"bottom left left"'},{value:'"bottom left right"'},{value:'"bottom left bottom"'},{value:'"bottom left top"'},{value:'"bottom right left"'},{value:'"bottom right right"'},{value:'"bottom right bottom"'},{value:'"bottom right top"'},{value:'"top center left"'},{value:'"top center right"'},{value:'"top center bottom"'},{value:'"top center top"'},{value:'"top left left"'},{value:'"top left right"'},{value:'"top left bottom"'},{value:'"top left top"'},{value:'"top right left"'},{value:'"top right right"'},{value:'"top right bottom"'},{value:'"top right top"'}]}},open:{defaultValue:null,description:"The controlled open state of the dropdown.\nMust be used in conjunction with `onToggle`.",name:"open",required:!1,type:{name:"boolean"}},defaultOpen:{defaultValue:null,description:"The open state of the dropdown when initially rendered.\nUse when you do not need to control its open state. It will be overridden\nby the `open` prop if it is specified on the component's first render.",name:"defaultOpen",required:!1,type:{name:"boolean"}},isRenderedInSidebar:{defaultValue:null,description:"",name:"isRenderedInSidebar",required:!0,type:{name:"boolean"}}}}}catch{}try{T.displayName="ColorPalette",T.__docgenInfo={description:`Allows the user to pick a color from a list of pre-defined color entries.
+
+\`\`\`jsx
+import { ColorPalette } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+
+const MyColorPalette = () => {
+  const [ color, setColor ] = useState ( '#f00' )
+  const colors = [
+    { name: 'red', color: '#f00' },
+    { name: 'white', color: '#fff' },
+    { name: 'blue', color: '#00f' },
+  ];
+  return (
+    <ColorPalette
+      colors={ colors }
+      value={ color }
+      onChange={ ( color ) => setColor( color ) }
+    />
+  );
+} );
+\`\`\``,displayName:"ColorPalette",props:{}}}catch{}try{colorpalette.displayName="colorpalette",colorpalette.__docgenInfo={description:`Allows the user to pick a color from a list of pre-defined color entries.
+
+\`\`\`jsx
+import { ColorPalette } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+
+const MyColorPalette = () => {
+  const [ color, setColor ] = useState ( '#f00' )
+  const colors = [
+    { name: 'red', color: '#f00' },
+    { name: 'white', color: '#fff' },
+    { name: 'blue', color: '#00f' },
+  ];
+  return (
+    <ColorPalette
+      colors={ colors }
+      value={ color }
+      onChange={ ( color ) => setColor( color ) }
+    />
+  );
+} );
+\`\`\``,displayName:"colorpalette",props:{}}}catch{}export{T as C,w as L,ce as a,k as b,P as g,de as i};

@@ -1,0 +1,1 @@
+import{n as t,_ as n}from"./index-CK8hcbFu.js";function o(a,r){var s=a.charAt(0),e=a.substr(1).toLowerCase();return r>0&&s>="0"&&s<="9"?"_"+s+e:""+s.toUpperCase()+e}function i(a,r){return r===void 0&&(r={}),t(a,n({delimiter:"",transform:o},r))}export{o as a,i as p};

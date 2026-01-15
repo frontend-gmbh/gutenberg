@@ -1,0 +1,1 @@
+import{d as l}from"./index-ChLxn6tX.js";var n=(i,t,e)=>{let r=!0,a=!0;return e&&(r="leading"in e?!!e.leading:r,a="trailing"in e?!!e.trailing:a),l(i,t,{leading:r,trailing:a,maxWait:t})};export{n as t};

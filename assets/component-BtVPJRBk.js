@@ -1,0 +1,1 @@
+import{u as e,c as a,a as r}from"./component-OVYdkCXu.js";import{u as s}from"./component-DsqK5SLR.js";import{a as u}from"./iframe-2TvY6Iig.js";function m(t){const{expanded:o=!1,alignment:n="stretch",...c}=e(t,"VStack");return s({direction:"column",expanded:o,alignment:n,...c})}function p(t,o){const n=m(t);return u.jsx(r,{...n,ref:o})}var S=a(p,"VStack"),d=S;export{d as c};

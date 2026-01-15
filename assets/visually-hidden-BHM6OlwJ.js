@@ -1,0 +1,2 @@
+import{r as t}from"./iframe-2TvY6Iig.js";import{u as o}from"./useRender-CZYnIQEd.js";import{m as l}from"./useRenderElement-D_ShKst7.js";const a={"visually-hidden":"_visually-hidden_1q0i8_4"},e=t.forwardRef(function({render:i,...n},r){return o({render:i,ref:r,props:l({className:a["visually-hidden"]},n)})});try{e.displayName="VisuallyHidden",e.__docgenInfo={description:`Visually hides content while keeping it accessible to screen readers.
+Useful when providing context that's only meaningful to assistive technology.`,displayName:"VisuallyHidden",props:{}}}catch{}export{e as V};

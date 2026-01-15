@@ -1,0 +1,1 @@
+var e;function o(t){if(typeof t!="string"||t.indexOf("&")===-1)return t;e===void 0&&(document.implementation&&document.implementation.createHTMLDocument?e=document.implementation.createHTMLDocument("").createElement("textarea"):e=document.createElement("textarea")),e.innerHTML=t;const n=e.textContent??"";return e.innerHTML="",n}export{o as d};

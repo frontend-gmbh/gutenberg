@@ -1,0 +1,7 @@
+import{j as s}from"./iframe-2TvY6Iig.js";import{C as c}from"./index-T9FElN6z.js";import{I as u}from"./index-Dnuq8uNu.js";import{g as p}from"./utils-B4okX7QX.js";import{s as l}from"./swatch-DhM4882I.js";import"./preload-helper-Zf8nSx-t.js";import"./index-BIvJ8ozV.js";import"./names-BarMHYgS.js";function t({values:r}){return r?s(c,{colorValue:p(r,"135deg")}):s(u,{icon:l})}try{t.displayName="DuotoneSwatch",t.__docgenInfo={description:"",displayName:"DuotoneSwatch",props:{values:{defaultValue:null,description:"An array of colors to show or `null` to show the placeholder swatch icon.",name:"values",required:!1,type:{name:"string[]"}}}}}catch{}const _={title:"Components/DuotoneSwatch",component:t,parameters:{controls:{expanded:!0},docs:{canvas:{sourceState:"shown"}}}},n=r=>s(t,{...r}),o=n.bind({});o.args={values:["#000","#fff"]};const e=n.bind({});e.args={values:["pink"]};const a=n.bind({});a.args={values:null};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`args => {
+  return <DuotoneSwatch {...args} />;
+}`,...o.parameters?.docs?.source}}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`args => {
+  return <DuotoneSwatch {...args} />;
+}`,...e.parameters?.docs?.source}}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`args => {
+  return <DuotoneSwatch {...args} />;
+}`,...a.parameters?.docs?.source}}};export{o as Default,a as Null,e as SingleColor,_ as default};

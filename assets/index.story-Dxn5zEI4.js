@@ -1,0 +1,53 @@
+import{j as r,f as q,c as M,r as D}from"./iframe-2TvY6Iig.js";import{i as E}from"./index-FlM62Vh8.js";import{a as o,i as j}from"./default-i18n-SWt35ZM4.js";import{u as z}from"./index-BjXx3EE5.js";import{C}from"./index-CjAjqcqY.js";import{T as O}from"./index-Dt7LODwq.js";import{V as B}from"./component-BGXh8e92.js";import{R as G,S as $}from"./index-BIvJ8ozV.js";import{H}from"./component-CIWI0tS-.js";import"./preload-helper-Zf8nSx-t.js";import"./YORGHBM4-BbXtUlZO.js";import"./LMDWO4NN-CH0ROf0T.js";import"./T7VMP3TM-h-RVnCqR.js";import"./P2CTZE2T-C4NqLDvb.js";import"./LVA2YJMS-Bhv8eVm0.js";import"./J2LQO3EC-KBEnfm3G.js";import"./ITI7HKP4-_BMwSXRb.js";import"./index-BjRskdOB.js";import"./index-1YdoA736.js";import"./cubic-bezier-CfzpfWNY.js";import"./T6C2RYFI-BXv3qAIm.js";import"./floating-ui.utils.dom-BlKqeV2W.js";import"./dropdown-motion-BuMQU1CT.js";import"./use-context-system-GBkKyJuM.js";import"./index-DUXT-3wK.js";import"./is-plain-object-BJ3z7EOF.js";import"./index-BtJmv7lM.js";import"./index-CK8hcbFu.js";import"./component-DATVQiJy.js";import"./hook-D_MMjSqd.js";import"./values-CtPxXHrl.js";import"./get-valid-children-BTY2hlyh.js";import"./component-CqSZVoza.js";import"./hook-56LQ9BfU.js";import"./emotion-react.browser.esm-T2caqgd_.js";import"./context-DbMhvW6o.js";import"./use-responsive-value-bUbLlkWc.js";import"./space-CjrGwnR-.js";const L=[["top left","top center","top right"],["center left","center center","center right"],["bottom left","bottom center","bottom right"]],U={"top left":o("Top Left"),"top center":o("Top Center"),"top right":o("Top Right"),"center left":o("Center Left"),"center center":o("Center"),center:o("Center"),"center right":o("Center Right"),"bottom left":o("Bottom Left"),"bottom center":o("Bottom Center"),"bottom right":o("Bottom Right")},N=L.flat();function S(e){const t=(e==="center"?"center center":e)?.replace("-"," ");return N.includes(t)?t:void 0}function g(e,n){const t=S(n);if(!t)return;const l=t.replace(" ","-");return`${e}-${l}`}function A(e,n){const t=n?.replace(e+"-","");return S(t)}function V(e="center"){const n=S(e);if(!n)return;const t=N.indexOf(n);return t>-1?t:void 0}try{g.displayName="getItemId",g.__docgenInfo={description:"Creates an item ID based on a prefix ID and an alignment value.",displayName:"getItemId",props:{}}}catch{}try{A.displayName="getItemValue",A.__docgenInfo={description:"Extracts an item value from its ID",displayName:"getItemValue",props:{}}}catch{}try{V.displayName="getAlignmentIndex",V.__docgenInfo={description:"Retrieves the alignment index from a value.",displayName:"getAlignmentIndex",props:{}}}catch{}const k="_cell_1ipxc_66",P="_point_1ipxc_79",_={"grid-container":"_grid-container_1ipxc_46","grid-row":"_grid-row_1ipxc_59",cell:k,point:P};function Z({id:e,value:n,...t}){return r(O,{text:U[n],children:q(C.Item,{id:e,render:r("span",{...t,className:M(_.cell,t.className),role:"gridcell"}),children:[r(B,{children:n}),r("span",{className:_.point,role:"presentation"})]})})}try{cell.displayName="cell",cell.__docgenInfo={description:"",displayName:"cell",props:{value:{defaultValue:null,description:"",name:"value",required:!0,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}}}}}catch{}const p=24,d=7,T=(p-3*d)/2,K=2,Y=4;function w({className:e,disablePointerEvents:n=!0,size:t,width:l,height:u,style:i={},value:I="center",...x}){return r($,{xmlns:"http://www.w3.org/2000/svg",viewBox:`0 0 ${p} ${p}`,width:t??l??p,height:t??u??p,role:"presentation",className:M("component-alignment-matrix-control-icon",e),style:{pointerEvents:n?"none":void 0,...i},...x,children:N.map((a,m)=>{const s=V(I)===m?Y:K;return r(G,{x:T+m%3*d+(d-s)/2,y:T+Math.floor(m/3)*d+(d-s)/2,width:s,height:s,fill:"currentColor"},a)})})}try{w.displayName="AlignmentMatrixControlIcon",w.__docgenInfo={description:"",displayName:"AlignmentMatrixControlIcon",props:{value:{defaultValue:{value:"center"},description:"The current alignment value.",name:"value",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}},disablePointerEvents:{defaultValue:{value:"true"},description:"If `true`, disables pointer events on the icon.",name:"disablePointerEvents",required:!1,type:{name:"boolean"}},size:{defaultValue:{value:"24"},description:`_Note: this prop is deprecated. Use the \`size\` prop on the parent \`Icon\`
+component instead_
+
+The size of the icon.
+@deprecated
+@ignore`,name:"size",required:!1,type:{name:"number"}}}}}catch{}function R({className:e,id:n,label:t=o("Alignment Matrix Control"),defaultValue:l="center center",value:u,onChange:i,width:I=92,...x}){const a=z(R,"alignment-matrix-control",n),m=D.useCallback(b=>{const v=A(a,b);v&&i?.(v)},[a,i]),s=M("component-alignment-matrix-control",_["grid-container"],e);return r(C,{defaultActiveId:g(a,l),activeId:g(a,u),setActiveId:m,rtl:j(),render:r("div",{...x,className:s,"aria-label":t,id:a,role:"grid",style:{width:`${I}px`}}),children:L.map((b,v)=>r(C.Row,{render:r("div",{className:_["grid-row"],role:"row"}),children:b.map(y=>r(Z,{id:g(a,y),value:y},y))},v))})}const c=Object.assign(R,{Icon:Object.assign(w,{displayName:"AlignmentMatrixControl.Icon"})});try{c.displayName="AlignmentMatrixControl",c.__docgenInfo={description:`AlignmentMatrixControl components enable adjustments to horizontal and vertical alignments for UI.
+
+\`\`\`jsx
+import { AlignmentMatrixControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+
+const Example = () => {
+	const [ alignment, setAlignment ] = useState( 'center center' );
+
+	return (
+		<AlignmentMatrixControl
+			value={ alignment }
+			onChange={ setAlignment }
+		/>
+	);
+};
+\`\`\``,displayName:"AlignmentMatrixControl",props:{label:{defaultValue:{value:"'Alignment Matrix Control'"},description:"Accessible label. If provided, sets the `aria-label` attribute of the\nunderlying `grid` widget.",name:"label",required:!1,type:{name:"string"}},defaultValue:{defaultValue:{value:"'center center'"},description:"If provided, sets the default alignment value.",name:"defaultValue",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}},value:{defaultValue:null,description:"The current alignment value.",name:"value",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}},onChange:{defaultValue:null,description:"A function that receives the updated alignment value.",name:"onChange",required:!1,type:{name:"(newValue: AlignmentMatrixControlValue) => void"}},width:{defaultValue:{value:"92"},description:"If provided, sets the width of the control.",name:"width",required:!1,type:{name:"number"}}}}}catch{}try{alignmentmatrixcontrol.displayName="alignmentmatrixcontrol",alignmentmatrixcontrol.__docgenInfo={description:`AlignmentMatrixControl components enable adjustments to horizontal and vertical alignments for UI.
+
+\`\`\`jsx
+import { AlignmentMatrixControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+
+const Example = () => {
+	const [ alignment, setAlignment ] = useState( 'center center' );
+
+	return (
+		<AlignmentMatrixControl
+			value={ alignment }
+			onChange={ setAlignment }
+		/>
+	);
+};
+\`\`\``,displayName:"alignmentmatrixcontrol",props:{label:{defaultValue:{value:"'Alignment Matrix Control'"},description:"Accessible label. If provided, sets the `aria-label` attribute of the\nunderlying `grid` widget.",name:"label",required:!1,type:{name:"string"}},defaultValue:{defaultValue:{value:"'center center'"},description:"If provided, sets the default alignment value.",name:"defaultValue",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}},value:{defaultValue:null,description:"The current alignment value.",name:"value",required:!1,type:{name:"enum",value:[{value:'"center"'},{value:'"bottom center"'},{value:'"bottom left"'},{value:'"bottom right"'},{value:'"top center"'},{value:'"top left"'},{value:'"top right"'},{value:'"center left"'},{value:'"center center"'},{value:'"center right"'}]}},onChange:{defaultValue:null,description:"A function that receives the updated alignment value.",name:"onChange",required:!1,type:{name:"(newValue: AlignmentMatrixControlValue) => void"}},width:{defaultValue:{value:"92"},description:"If provided, sets the width of the control.",name:"width",required:!1,type:{name:"number"}}}}}catch{}const{fn:F}=__STORYBOOK_MODULE_TEST__,Re={title:"Components/AlignmentMatrixControl",component:c,subcomponents:{"AlignmentMatrixControl.Icon":c.Icon},argTypes:{onChange:{control:!1},value:{control:!1}},args:{onChange:F()},parameters:{controls:{expanded:!0},docs:{canvas:{sourceState:"shown"}}}},J=({defaultValue:e,onChange:n,...t})=>{const[l,u]=D.useState();return r(c,{...t,onChange:(...i)=>{u(...i),n?.(...i)},value:l})},f=J.bind({}),h=()=>q(H,{justify:"flex-start",children:[r(E,{icon:r(c.Icon,{value:"top left"})}),r(E,{icon:r(c.Icon,{value:"center center"})})]});f.parameters={...f.parameters,docs:{...f.parameters?.docs,source:{originalSource:`({
+  defaultValue,
+  onChange,
+  ...props
+}) => {
+  const [value, setValue] = useState<AlignmentMatrixControlProps['value']>();
+  return <AlignmentMatrixControl {...props} onChange={(...changeArgs) => {
+    setValue(...changeArgs);
+    onChange?.(...changeArgs);
+  }} value={value} />;
+}`,...f.parameters?.docs?.source}}};h.parameters={...h.parameters,docs:{...h.parameters?.docs,source:{originalSource:`() => {
+  return <HStack justify="flex-start">
+            <Icon icon={<AlignmentMatrixControl.Icon value="top left" />} />
+            <Icon icon={<AlignmentMatrixControl.Icon value="center center" />} />
+        </HStack>;
+}`,...h.parameters?.docs?.source}}};export{f as Default,h as IconSubcomponent,Re as default};
